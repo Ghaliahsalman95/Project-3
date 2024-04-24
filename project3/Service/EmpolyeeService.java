@@ -29,9 +29,11 @@ public class EmpolyeeService {
     }
 
     public void add(DTOEmployee employee) {
-        MyUser myUser = new MyUser(employee.getUsername(), new BCryptPasswordEncoder().encode(employee.getPassword()), employee.getName(), "EMPLOYEE", employee.getEmail());
+        MyUser myUser = new MyUser(employee.getUsername(),employee.getPassword(), employee.getName(), "EMPLOYEE", employee.getEmail());
 //
+
         myUserService.addUser(myUser);
+        //Ms//in addUser in myUserService new BCryptPasswordEncoder().encode(employee.getPassword());
 //-------------------------------------------------------
         Employee retrive = new Employee(null, employee.getPosition(), employee.getSalary(), myUserRepoistry.findUserByUsername(employee.getUsername()));
         employeeRepository.save(retrive);

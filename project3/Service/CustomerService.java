@@ -30,7 +30,7 @@ public class CustomerService {
         else return customerRepository.findAll();
     }
     public void add( DTOCustomer customer){
-        MyUser myUser=new MyUser(customer.getUsername(),new BCryptPasswordEncoder().encode(customer.getPassword()),customer.getName(),"CUSTOMER",customer.getEmail());
+        MyUser myUser=new MyUser(customer.getUsername(),customer.getPassword(),customer.getName(),"CUSTOMER",customer.getEmail());
 
         myUserService.addUser(myUser);
 //-------------------------------------------------------

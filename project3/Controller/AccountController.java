@@ -88,7 +88,7 @@ public ResponseEntity ViewAccountDetails(@AuthenticationPrincipal MyUser myUser,
     public ResponseEntity Transferfundsbetweenaccounts(@AuthenticationPrincipal MyUser myUser,@PathVariable Integer myaccountId,@PathVariable Integer accountId,@PathVariable Double amount){
         accountService.Transferfundsbetweenaccounts(myUser.getId(),myaccountId,accountId,amount);
         return ResponseEntity.status(HttpStatus.OK).body(new APIResponse("Amount transferred  successfully"));
-
+//
     }
         //  8. Block bank account
     @PostMapping("/block-account/{accountId}")
